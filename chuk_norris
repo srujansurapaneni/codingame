@@ -1,0 +1,44 @@
+import sys
+import math
+
+### INPUT ###
+message = "CC"
+inp = ''.join(message.split())
+
+### INPUT CLEAN-UP ###
+bin = ''.join(format(ord(x),'b') for x in inp)
+
+### SPLIT 1s and 0s ###
+post1 = bin.replace("10","1 0")
+post2 = post1.replace("01","0 1")
+post3 = post2.replace("0","2")
+post4 = [int(i) for i in post3.split(' ')]
+#post5 = [str(post4).replace("2","0")]
+
+### convert 1s ###
+post6 =  post4[post4.index(1)] = "0 0"
+post7 =  post4[post4.index(11)] = "0 00"
+post8 =  post4[post4.index(111)] = "0 000"
+post9 =  post4[post4.index(1111)] = "0 0000"
+post10 = post4[post4.index(11111)] = "0 00000"
+post11 = post4[post4.index(111111)] = "0 000000"
+post12 = post4[post4.index(1111111)] = "0 0000000"
+### convert 0s ###
+post13 = post4[post4.index(2)] = "00 0"
+post14 = post4[post4.index(22)] = "00 00"
+post15 = post4[post4.index(222)] = "00 000"
+post16 = post4[post4.index(2222)] = "00 0000"
+post17 = post4[post4.index(22222)] = "00 00000"
+post18 = post4[post4.index(222222)] = "00 000000"
+post19 = post4[post4.index(2222222)] = "00 0000000"
+
+print(inp)
+print(bin)
+print(post4)
+#print(post1)
+#print(post2)
+#print(post3)
+#print(post4)
+#print(post5)
+#print(type(post5))
+#print(post6)
